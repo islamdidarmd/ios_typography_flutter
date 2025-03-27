@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:ios_typography/src/text_styles.dart';
 
 /// Extension on [Text] widget to provide SwiftUI-like text styling.
 extension IOSTextStyle on Text {
@@ -6,135 +7,101 @@ extension IOSTextStyle on Text {
   ///
   /// Similar to SwiftUI's .font(.largeTitle) modifier.
   Text largeTitle() {
-    return _applyStyle(const CupertinoTextThemeData().navLargeTitleTextStyle);
+    return _applyStyle(IOSTextStyles.largeTitle());
   }
 
   /// Applies a title text style to the text.
   ///
   /// Similar to SwiftUI's .font(.title) modifier.
   Text title() {
-    const TextStyle titleStyle = TextStyle(
-      //fontFamily: '.SF Pro Display',
-      fontSize: 28.0,
-      fontWeight: FontWeight.bold,
-      letterSpacing: 0.36,
-      height: 1.2,
-    );
-    return _applyStyle(titleStyle);
+    return _applyStyle(IOSTextStyles.title());
   }
 
   /// Applies a title 2 text style to the text.
   ///
   /// Similar to SwiftUI's .font(.title2) modifier.
   Text title2() {
-    const TextStyle title2Style = TextStyle(
-      //fontFamily: '.SF Pro Display',
-      fontSize: 22.0,
-      fontWeight: FontWeight.bold,
-      letterSpacing: 0.35,
-      height: 1.2,
-    );
-    return _applyStyle(title2Style);
+    return _applyStyle(IOSTextStyles.title2());
   }
 
   /// Applies a title 3 text style to the text.
   ///
   /// Similar to SwiftUI's .font(.title3) modifier.
   Text title3() {
-    const TextStyle title3Style = TextStyle(
-      //fontFamily: '.SF Pro Display',
-      fontSize: 20.0,
-      fontWeight: FontWeight.w600,
-      letterSpacing: 0.38,
-      height: 1.2,
-    );
-    return _applyStyle(title3Style);
+    return _applyStyle(IOSTextStyles.title3());
   }
 
   /// Applies a headline text style to the text.
   ///
   /// Similar to SwiftUI's .font(.headline) modifier.
   Text headline() {
-    return _applyStyle(const CupertinoTextThemeData().navTitleTextStyle);
+    return _applyStyle(IOSTextStyles.headline());
   }
 
   /// Applies a subheadline text style to the text.
   ///
   /// Similar to SwiftUI's .font(.subheadline) modifier.
   Text subheadline() {
-    const TextStyle subheadlineStyle = TextStyle(
-      //fontFamily: '.SF Pro Text',
-      fontSize: 15.0,
-      fontWeight: FontWeight.w500,
-      letterSpacing: -0.24,
-      height: 1.3,
-    );
-    return _applyStyle(subheadlineStyle);
+    return _applyStyle(IOSTextStyles.subheadline());
   }
 
   /// Applies a body text style to the text.
   ///
   /// Similar to SwiftUI's .font(.body) modifier.
   Text body() {
-    return _applyStyle(const CupertinoTextThemeData().textStyle);
+    return _applyStyle(IOSTextStyles.body());
   }
 
   /// Applies a callout text style to the text.
   ///
   /// Similar to SwiftUI's .font(.callout) modifier.
   Text callout() {
-    const TextStyle calloutStyle = TextStyle(
-      //fontFamily: '.SF Pro Text',
-      fontSize: 16.0,
-      fontWeight: FontWeight.w400,
-      letterSpacing: -0.32,
-      height: 1.3,
-    );
-    return _applyStyle(calloutStyle);
+    return _applyStyle(IOSTextStyles.callout());
   }
 
   /// Applies a footnote text style to the text.
   ///
   /// Similar to SwiftUI's .font(.footnote) modifier.
   Text footnote() {
-    const TextStyle footnoteStyle = TextStyle(
-      //fontFamily: '.SF Pro Text',
-      fontSize: 13.0,
-      fontWeight: FontWeight.w400,
-      letterSpacing: -0.08,
-      height: 1.3,
-    );
-    return _applyStyle(footnoteStyle);
+    return _applyStyle(IOSTextStyles.footnote());
   }
 
   /// Applies a caption text style to the text.
   ///
   /// Similar to SwiftUI's .font(.caption) modifier.
   Text caption() {
-    return _applyStyle(const CupertinoTextThemeData().tabLabelTextStyle);
+    return _applyStyle(IOSTextStyles.caption());
   }
 
   /// Applies a caption 2 text style to the text.
   ///
   /// Similar to SwiftUI's .font(.caption2) modifier.
   Text caption2() {
-    const TextStyle caption2Style = TextStyle(
-      //fontFamily: '.SF Pro Text',
-      fontSize: 11.0,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 0.06,
-      height: 1.3,
-    );
-    return _applyStyle(caption2Style);
+    return _applyStyle(IOSTextStyles.caption2());
   }
 
-  /// Helper method to apply a TextStyle to the text.
-  ///
-  /// This method handles both regular Text and Text.rich constructors,
-  /// merging the new style with any existing style to preserve formatting.
-  ///
-  /// @param newStyle The TextStyle to apply to the Text widget
-  /// @return A new Text widget with the merged style applied
+  // Helper extension to make it easier to apply colors to styled text
+  Text copyWith({TextStyle? style}) {
+    final TextStyle currentStyle = this.style ?? const TextStyle();
+    return Text(
+      data ?? '',
+      style: currentStyle.merge(style),
+      strutStyle: strutStyle,
+      textAlign: textAlign,
+      textDirection: textDirection,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      // ignore: deprecated_member_use
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior: textHeightBehavior,
+    );
+  }
+
+  // Helper method to apply a TextStyle to the text
   Text _applyStyle(TextStyle newStyle) {
     final TextStyle currentStyle = style ?? const TextStyle();
     final TextStyle mergedStyle = currentStyle.merge(newStyle);
@@ -165,8 +132,7 @@ extension IOSTextStyle on Text {
           locale: locale,
           softWrap: softWrap,
           overflow: overflow,
-          // ignore: deprecated_member_use
-          textScaleFactor: textScaleFactor,
+          textScaler: textScaler,
           maxLines: maxLines,
           semanticsLabel: semanticsLabel,
           textWidthBasis: textWidthBasis,
@@ -182,8 +148,7 @@ extension IOSTextStyle on Text {
           locale: locale,
           softWrap: softWrap,
           overflow: overflow,
-          // ignore: deprecated_member_use
-          textScaleFactor: textScaleFactor,
+          textScaler: textScaler,
           maxLines: maxLines,
           semanticsLabel: semanticsLabel,
           textWidthBasis: textWidthBasis,
@@ -201,8 +166,7 @@ extension IOSTextStyle on Text {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        // ignore: deprecated_member_use
-        textScaleFactor: textScaleFactor,
+        textScaler: textScaler,
         maxLines: maxLines,
         semanticsLabel: semanticsLabel,
         textWidthBasis: textWidthBasis,

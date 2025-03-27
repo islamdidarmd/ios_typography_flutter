@@ -4,3 +4,4 @@
 library ios_typography;
 
 export 'src/text_style_extension.dart';
+export 'src/text_styles.dart';

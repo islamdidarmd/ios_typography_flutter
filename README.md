@@ -1,12 +1,15 @@
 # iOS Typography
 
-A Flutter package that provides SwiftUI-like text styles for Cupertino widgets.
+A Flutter package that provides iOS-like text styles for Cupertino widgets.
+
+## Demo
+![](demo/demo.png)
 
 ## Features
 
-- Simple text extension methods that mirror SwiftUI's font styles
+- Simple text extension methods that mirror iOS's font styles
 - Works with all Text widgets in a Cupertino app
-- Consistent with iOS/macOS typography guidelines
+- Consistent with iOS typography guidelines
 
 ## Installation
 
@@ -14,7 +17,7 @@ Add the package to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  ios_typography: ^1.0.0
+  ios_typography: ^latest_version
 ```
 
 ## Usage
@@ -48,6 +51,8 @@ class MyWidget extends StatelessWidget {
               Text('Footnote').footnote(),
               Text('Caption').caption(),
               Text('Caption 2').caption2(),
+              //Flutter style
+              Text('Large Title', style: IOSTextStyles.largeTitle())
             ],
           ),
         ),
@@ -59,7 +64,7 @@ class MyWidget extends StatelessWidget {
 
 ## Available Text Styles
 
-This package provides the following text style extension methods that match SwiftUI's font styles:
+This package provides the following text style extension methods that match iOS's font styles:
 
 - `.largeTitle()` - The largest pre-defined text style
 - `.title()` - Large, prominent text
