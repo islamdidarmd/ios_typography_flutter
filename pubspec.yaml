@@ -1,0 +1,20 @@
+name: ios_typography
+description: A Flutter package that provides SwiftUI-like text styles for Cupertino widgets
+version: "1.0.0"
+homepage: https://github.com/islamdidarmd/ios_typography
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  # This section identifies this package as a Flutter package.
+  uses-material-design: false 
