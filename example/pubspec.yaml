@@ -1,6 +1,7 @@
 name: ios_typography_example
 description: A example for ios_typography
 version: 0.1.0
+publish_to: 'none'
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -13,9 +14,9 @@ dependencies:
     path: ../
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
   # This section identifies this package as a Flutter package.

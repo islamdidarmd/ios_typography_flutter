@@ -14,7 +14,7 @@ Add the package to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  ios_typography: ^0.1.0
+  ios_typography: ^1.0.0
 ```
 
 ## Usage

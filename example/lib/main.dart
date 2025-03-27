@@ -1,11 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:ios_typography/ios_typography.dart';
 
+/// Main entry point for the application
 void main() {
   runApp(const IOSTypographyExample());
 }
 
+/// The root widget of the iOS Typography example app.
+///
+/// This widget sets up the Cupertino app with a light theme and displays
+/// the typography demo page.
 class IOSTypographyExample extends StatelessWidget {
+  /// Creates a new [IOSTypographyExample] instance.
   const IOSTypographyExample({super.key});
 
   @override
@@ -18,7 +24,11 @@ class IOSTypographyExample extends StatelessWidget {
   }
 }
 
+/// The main page of the app that displays all the typography styles.
+///
+/// This page showcases all the available text styles provided by the ios_typography package.
 class TypographyDemoPage extends StatelessWidget {
+  /// Creates a new [TypographyDemoPage] instance.
   const TypographyDemoPage({super.key});
 
   @override
@@ -86,8 +96,19 @@ class TypographyDemoPage extends StatelessWidget {
   }
 }
 
-// Helper extension to make it easier to apply colors to styled text
+/// Extension to make it easier to apply additional styles to Text widgets.
+///
+/// This extension allows you to apply additional styling to a Text widget
+/// that has already been styled with typography extensions, enabling
+/// fine-grained control over appearance.
 extension TextCopyWith on Text {
+  /// Creates a copy of this Text with the given style merged into the existing style.
+  ///
+  /// This is useful for adding color, decoration, or other style properties
+  /// to a Text widget that already has typography styling applied.
+  ///
+  /// @param style The style to merge with the existing style
+  /// @return A new Text widget with the merged style
   Text copyWith({TextStyle? style}) {
     final TextStyle currentStyle = this.style ?? const TextStyle();
     return Text(

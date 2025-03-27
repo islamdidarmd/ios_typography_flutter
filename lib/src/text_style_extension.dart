@@ -6,7 +6,7 @@ extension IOSTextStyle on Text {
   ///
   /// Similar to SwiftUI's .font(.largeTitle) modifier.
   Text largeTitle() {
-    return _applyStyle(CupertinoTextThemeData().navLargeTitleTextStyle);
+    return _applyStyle(const CupertinoTextThemeData().navLargeTitleTextStyle);
   }
 
   /// Applies a title text style to the text.
@@ -55,14 +55,14 @@ extension IOSTextStyle on Text {
   ///
   /// Similar to SwiftUI's .font(.headline) modifier.
   Text headline() {
-    return _applyStyle(CupertinoTextThemeData().navTitleTextStyle);
+    return _applyStyle(const CupertinoTextThemeData().navTitleTextStyle);
   }
 
   /// Applies a subheadline text style to the text.
   ///
   /// Similar to SwiftUI's .font(.subheadline) modifier.
   Text subheadline() {
-    TextStyle subheadlineStyle = TextStyle(
+    const TextStyle subheadlineStyle = TextStyle(
       //fontFamily: '.SF Pro Text',
       fontSize: 15.0,
       fontWeight: FontWeight.w500,
@@ -76,7 +76,7 @@ extension IOSTextStyle on Text {
   ///
   /// Similar to SwiftUI's .font(.body) modifier.
   Text body() {
-    return _applyStyle(CupertinoTextThemeData().textStyle);
+    return _applyStyle(const CupertinoTextThemeData().textStyle);
   }
 
   /// Applies a callout text style to the text.
@@ -111,7 +111,7 @@ extension IOSTextStyle on Text {
   ///
   /// Similar to SwiftUI's .font(.caption) modifier.
   Text caption() {
-    return _applyStyle(CupertinoTextThemeData().tabLabelTextStyle);
+    return _applyStyle(const CupertinoTextThemeData().tabLabelTextStyle);
   }
 
   /// Applies a caption 2 text style to the text.
@@ -128,7 +128,13 @@ extension IOSTextStyle on Text {
     return _applyStyle(caption2Style);
   }
 
-  // Helper method to apply a TextStyle to the text
+  /// Helper method to apply a TextStyle to the text.
+  ///
+  /// This method handles both regular Text and Text.rich constructors,
+  /// merging the new style with any existing style to preserve formatting.
+  ///
+  /// @param newStyle The TextStyle to apply to the Text widget
+  /// @return A new Text widget with the merged style applied
   Text _applyStyle(TextStyle newStyle) {
     final TextStyle currentStyle = style ?? const TextStyle();
     final TextStyle mergedStyle = currentStyle.merge(newStyle);
@@ -159,6 +165,7 @@ extension IOSTextStyle on Text {
           locale: locale,
           softWrap: softWrap,
           overflow: overflow,
+          // ignore: deprecated_member_use
           textScaleFactor: textScaleFactor,
           maxLines: maxLines,
           semanticsLabel: semanticsLabel,
@@ -168,16 +175,14 @@ extension IOSTextStyle on Text {
       } else {
         // For other InlineSpan types, create a simpler version
         return Text.rich(
-          TextSpan(
-            style: mergedStyle,
-            children: [textSpan!],
-          ),
+          TextSpan(style: mergedStyle, children: [textSpan!]),
           strutStyle: strutStyle,
           textAlign: textAlign,
           textDirection: textDirection,
           locale: locale,
           softWrap: softWrap,
           overflow: overflow,
+          // ignore: deprecated_member_use
           textScaleFactor: textScaleFactor,
           maxLines: maxLines,
           semanticsLabel: semanticsLabel,
@@ -196,6 +201,7 @@ extension IOSTextStyle on Text {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
+        // ignore: deprecated_member_use
         textScaleFactor: textScaleFactor,
         maxLines: maxLines,
         semanticsLabel: semanticsLabel,
