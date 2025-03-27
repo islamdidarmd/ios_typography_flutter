@@ -3,7 +3,8 @@
 A Flutter package that provides iOS-like text styles for Cupertino widgets.
 
 ## Demo
-![](demo/demo.png)
+
+<img src="https://raw.githubusercontent.com/islamdidarmd/ios_typography_flutter/main/demo/demo.png" width="300" alt="demo"/>
 
 ## Features
 
