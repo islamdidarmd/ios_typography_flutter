@@ -12,7 +12,7 @@ class IOSTypographyExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       title: 'iOS Typography Demo',
-      theme: CupertinoThemeData(),
+      theme: CupertinoThemeData(brightness: Brightness.light),
       home: TypographyDemoPage(),
     );
   }
@@ -25,7 +25,7 @@ class TypographyDemoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text('iOS Typography').headline(),
+        middle: const Text('iOS Typography').headline(),
       ),
       child: SafeArea(
         child: Padding(
@@ -35,45 +35,45 @@ class TypographyDemoPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Section title
-                Text('Text Styles').headline(),
+                const Text('Text Styles').headline(),
                 const SizedBox(height: 16),
 
                 // Text style examples
-                Text('Large Title').largeTitle(),
+                const Text('Large Title').largeTitle(),
                 const SizedBox(height: 8),
 
-                Text('Title').title(),
+                const Text('Title').title(),
                 const SizedBox(height: 8),
 
-                Text('Title 2').title2(),
+                const Text('Title 2').title2(),
                 const SizedBox(height: 8),
 
-                Text('Title 3').title3(),
+                const Text('Title 3').title3(),
                 const SizedBox(height: 8),
 
-                Text('Headline').headline(),
+                const Text('Headline').headline(),
                 const SizedBox(height: 8),
 
-                Text('Subheadline').subheadline(),
+                const Text('Subheadline').subheadline(),
                 const SizedBox(height: 8),
 
-                Text('Body').body(),
+                const Text('Body').body(),
                 const SizedBox(height: 8),
 
-                Text('Callout').callout(),
+                const Text('Callout').callout(),
                 const SizedBox(height: 8),
 
-                Text('Footnote').footnote(),
+                const Text('Footnote').footnote(),
                 const SizedBox(height: 8),
 
-                Text('Caption').caption(),
+                const Text('Caption').caption(),
                 const SizedBox(height: 8),
 
-                Text('Caption 2').caption2(),
+                const Text('Caption 2').caption2(),
                 const SizedBox(height: 8),
 
                 // Example of styled text with Cupertino colors
-                Text('Colored Text').headline().copyWith(
+                const Text('Colored Text').headline().copyWith(
                       style: const TextStyle(color: CupertinoColors.systemBlue),
                     ),
                 const SizedBox(height: 8),
@@ -99,6 +99,7 @@ extension TextCopyWith on Text {
       locale: locale,
       softWrap: softWrap,
       overflow: overflow,
+      // ignore: deprecated_member_use
       textScaleFactor: textScaleFactor,
       maxLines: maxLines,
       semanticsLabel: semanticsLabel,
