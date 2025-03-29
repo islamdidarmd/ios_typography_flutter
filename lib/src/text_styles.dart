@@ -7,13 +7,16 @@
 import 'package:flutter/cupertino.dart';
 
 class IOSTextStyles {
-  static const CupertinoTextThemeData _baseTextTheme = CupertinoTextThemeData();
-
   /// Applies a large title text style to the text.
   ///
   /// Similar to SwiftUI's .font(.largeTitle) modifier.
   static TextStyle largeTitle() {
-    return _baseTextTheme.navLargeTitleTextStyle;
+    return const TextStyle(
+      fontSize: 34.0,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -1.5,
+      height: 1.5,
+    );
   }
 
   /// Applies a title text style to the text.
@@ -22,9 +25,9 @@ class IOSTextStyles {
   static TextStyle title() {
     return const TextStyle(
       fontSize: 28.0,
-      fontWeight: FontWeight.bold,
-      letterSpacing: 0.36,
-      height: 1.2,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -1.5,
+      height: 1.5,
     );
   }
 
@@ -34,36 +37,46 @@ class IOSTextStyles {
   static TextStyle title2() {
     return const TextStyle(
       fontSize: 22.0,
-      fontWeight: FontWeight.bold,
-      letterSpacing: 0.35,
-      height: 1.2,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -1.0,
+      height: 1.5,
     );
   }
 
   static TextStyle title3() {
     return const TextStyle(
       fontSize: 20.0,
-      fontWeight: FontWeight.w600,
-      letterSpacing: 0.38,
-      height: 1.2,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -0.5,
+      height: 1.5,
     );
   }
 
   static TextStyle headline() {
-    return _baseTextTheme.navTitleTextStyle;
+    return const TextStyle(
+      fontSize: 17.0,
+      fontWeight: FontWeight.w600,
+      letterSpacing: -0.5,
+      height: 1.5,
+    );
   }
 
   static TextStyle subheadline() {
     return const TextStyle(
       fontSize: 15.0,
-      fontWeight: FontWeight.w500,
-      letterSpacing: -0.24,
-      height: 1.3,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -0.5,
+      height: 1.5,
     );
   }
 
   static TextStyle body() {
-    return _baseTextTheme.textStyle;
+    return const TextStyle(
+      fontSize: 17.0,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -0.5,
+      height: 1.5,
+    );
   }
 
   /// Applies a callout text style to the text.
@@ -73,8 +86,8 @@ class IOSTextStyles {
     return const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      letterSpacing: -0.32,
-      height: 1.3,
+      letterSpacing: -0.5,
+      height: 1.5,
     );
   }
 
@@ -85,8 +98,8 @@ class IOSTextStyles {
     return const TextStyle(
       fontSize: 13.0,
       fontWeight: FontWeight.w400,
-      letterSpacing: -0.08,
-      height: 1.3,
+      letterSpacing: 0.1,
+      height: 1.5,
     );
   }
 
@@ -94,7 +107,12 @@ class IOSTextStyles {
   ///
   /// Similar to SwiftUI's .font(.caption) modifier.
   static TextStyle caption() {
-    return _baseTextTheme.tabLabelTextStyle;
+    return const TextStyle(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.3,
+      height: 1.5,
+    );
   }
 
   /// Applies a caption 2 text style to the text.
@@ -104,8 +122,8 @@ class IOSTextStyles {
     return const TextStyle(
       fontSize: 11.0,
       fontWeight: FontWeight.w400,
-      letterSpacing: 0.06,
-      height: 1.3,
+      letterSpacing: 0.3,
+      height: 1.5,
     );
   }
 }

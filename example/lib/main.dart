@@ -29,65 +29,52 @@ class TypographyDemoPage extends StatelessWidget {
       ),
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(32.0),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Section title
-                const Text('Text Styles with Extensions').body(),
-                const SizedBox(height: 16),
-
-                // Text style examples
-                const Text('Large Title').largeTitle(),
-                Text('Large Title', style: IOSTextStyles.largeTitle()),
-                const SizedBox(height: 8),
-
-                const Text('Title').title(),
-                Text('Title', style: IOSTextStyles.title()),
-                const SizedBox(height: 8),
-
-                const Text('Title 2').title2(),
-                Text('Title 2', style: IOSTextStyles.title2()),
-                const SizedBox(height: 8),
-
-                const Text('Title 3').title3(),
-                Text('Title 3', style: IOSTextStyles.title3()),
-                const SizedBox(height: 8),
-
-                const Text('Headline').headline(),
-                Text('Headline', style: IOSTextStyles.headline()),
-                const SizedBox(height: 8),
-
-                const Text('Subheadline').subheadline(),
-                Text('Subheadline', style: IOSTextStyles.subheadline()),
-                const SizedBox(height: 8),
-
-                const Text('Body').body(),
-                Text('Body', style: IOSTextStyles.body()),
-                const SizedBox(height: 8),
-
-                const Text('Callout').callout(),
-                Text('Callout', style: IOSTextStyles.callout()),
-                const SizedBox(height: 8),
-
-                const Text('Footnote').footnote(),
-                Text('Footnote', style: IOSTextStyles.footnote()),
-                const SizedBox(height: 8),
-
-                const Text('Caption').caption(),
-                Text('Caption', style: IOSTextStyles.caption()),
-                const SizedBox(height: 8),
-
-                const Text('Caption 2').caption2(),
-                Text('Caption 2', style: IOSTextStyles.caption2()),
-                const SizedBox(height: 8),
-
-                // Example of styled text with Cupertino colors
-                const Text('Colored Text').headline().copyWith(
-                      style: const TextStyle(color: CupertinoColors.systemBlue),
-                    ),
-              ],
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Text style examples
+                  const Text('Large Title').largeTitle(),
+                  Text('Large Title', style: IOSTextStyles.largeTitle()),
+              
+                  const Text('Title').title(),
+                  Text('Title', style: IOSTextStyles.title()),
+              
+                  const Text('Title2').title2(),
+                  Text('Title2', style: IOSTextStyles.title2()),
+              
+                  const Text('Title3').title3(),
+                  Text('Title3', style: IOSTextStyles.title3()),
+              
+                  const Text('Headline').headline(),
+                  Text('Headline', style: IOSTextStyles.headline()),
+              
+                  const Text('Subheadline').subheadline(),
+                  Text('Subheadline', style: IOSTextStyles.subheadline()),
+              
+                  const Text('Body').body(),
+                  Text('Body', style: IOSTextStyles.body()),
+              
+                  const Text('Callout').callout(),
+                  Text('Callout', style: IOSTextStyles.callout()),
+              
+                  const Text('Footnote').footnote(),
+                  Text('Footnote', style: IOSTextStyles.footnote()),
+              
+                  const Text('Caption').caption(),
+                  Text('Caption', style: IOSTextStyles.caption()),
+              
+                  const Text('Caption2').caption2(),
+                  Text('Caption2', style: IOSTextStyles.caption2()),
+              
+                  // Example of styled text with Cupertino colors
+                  const Text('Colored Text').body().copyWith(
+                        style: const TextStyle(color: CupertinoColors.systemBlue),
+                      ),
+                ],
+              ),
             ),
           ),
         ),

@@ -4,7 +4,9 @@ A Flutter package that provides iOS-like text styles for Cupertino widgets.
 
 ## Demo
 
-<img src="https://raw.githubusercontent.com/islamdidarmd/ios_typography_flutter/main/demo/demo.png" width="300" alt="demo"/>
+| SwiftUI | Flutter |
+|---------|---------|
+| <img src="https://raw.githubusercontent.com/islamdidarmd/ios_typography_flutter/main/demo/swiftui.png" width="300" alt="demo"/>        |<img src="https://raw.githubusercontent.com/islamdidarmd/ios_typography_flutter/main/demo/cupertino.png" width="300" alt="demo"/>         |
 
 ## Features
 

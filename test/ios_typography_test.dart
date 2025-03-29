@@ -52,13 +52,13 @@ void main() {
         CupertinoApp(
           home: CupertinoPageScaffold(
             child:
-                Text.rich(
+                const Text.rich(
                   TextSpan(
                     text: 'Rich ',
                     children: [
                       TextSpan(
                         text: 'Text',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
